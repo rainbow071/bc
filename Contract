@@ -1,0 +1,15 @@
+//Contract
+
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.24;
+contract Test {
+function TakeLoan(uint256) external payable {
+GiveLoan loan = new GiveLoan(350);
+}
+}
+contract GiveLoan {
+uint256 public money;
+constructor(uint256 _amt) public {
+money = _amt;
+}
+}
