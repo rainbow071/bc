@@ -1,0 +1,32 @@
+//Constructors
+
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.24;
+contract Hello{
+ string public greet;
+ constructor()
+ {
+ greet="Hello, M.Sc I.T K.C";
+ }
+ function setGreet (string memory _newgreet ) public{
+ greet = _newgreet;
+ }
+}
+
+//Interfaces 
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+interface A {
+    function getValue() external view returns (uint256);
+}
+
+contract B is A {
+    function getValue() external pure returns (uint256) {
+        uint256 x = 10;
+        uint256 y = 20;
+        uint256 result = x * y;
+        return result;
+    }
+}
