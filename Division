@@ -1,0 +1,9 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract DivisionContract {
+    function divide(uint256 _numerator, uint256 _denominator) public pure returns (uint256) {
+        require(_denominator != 0, "Division by zero");
+        return _numerator / _denominator;
+    }
+}
