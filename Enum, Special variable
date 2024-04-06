@@ -1,0 +1,35 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+contract Types {
+enum WeekDays {
+Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+}
+WeekDays public week;
+WeekDays public choice;
+WeekDays constant default_value = WeekDays.Sunday;
+function set_value() public {
+choice = WeekDays.Thursday;
+}
+function get_choice() public view returns (WeekDays) {
+return choice;
+}
+function get_default_value() public pure returns (WeekDays) {
+return default_value;
+}
+}
+
+//Special Variable
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+contract LedgerBalancee {
+mapping(address => string) name;
+function updateBalance() public returns (string memory) {
+name[msg.sender] = "Bob";
+return name[msg.sender];
+}
+function printsender() public view returns (address) {
+return msg.sender;
+}
+}
+
