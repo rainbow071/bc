@@ -1,0 +1,37 @@
+Fallback FUnction
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.24;
+
+contract FallBackFunction {
+    string public call; // Public variable to store information about the fallback function call
+
+    // Fallback function
+    fallback() external payable {
+        call = "I am a fallback function!"; // Store information about the fallback function call
+    }
+
+    // Receive function to handle incoming Ether without data
+    receive() external payable {
+        // Optionally handle incoming Ether here
+    }
+
+    // Getter function to retrieve the contract's balance
+    function getBalance() public view returns (uint) {
+        return address(this).balance; // Return the contract's balance
+    }
+}
+
+//Creating the sender contract
+contract Sender
+{
+function transferEther() public payable
+{
+require (msg.value>=2 ether,"Insufficient Ether Sent");
+(bool sent,) = payable (0xf8e81D47203A594245E36C48e151709F0C19fBe8).call{value: 1
+ether}("Transaction completed!");
+require(sent, "Transaction failed!");
+}
+function getBalance() public view returns(uint){
+return address(this).balance;
+}
+}
