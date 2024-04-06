@@ -1,0 +1,50 @@
+//Decision Making
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+contract Decision_Making{
+ uint256 public num;
+ function setNumber(uint256 _num) public {
+ num = _num;
+ }
+ function check() public view returns (string memory) {
+if(num % 2 == 0) {
+ return string("The number entered is even.");
+ }
+ return string(abi.encodePacked("The number entered is odd."));
+ }
+}
+
+
+//String
+
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.24;
+contract Hello{
+ string public greet;
+constructor(){
+ greet="Hello, MScIT";
+ }
+ function setGreet(string memory _newgreet) public{
+ greet=_newgreet;
+ }
+}
+
+//Array
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+contract MyArray {
+uint256[] nums = [1, 2, 33, 21];
+event PrintArray(uint256[] values);
+function getLength() public view returns (uint256) {
+return nums.length;
+}
+function pop() public {
+require(nums.length > 0, "Array is empty");
+nums.pop();
+}
+function push(uint256 i) public {
+nums.push(i);
+emit PrintArray(nums);
+}
+}
